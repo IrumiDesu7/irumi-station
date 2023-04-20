@@ -9,6 +9,8 @@ const Navbar = () => {
           href='https://github.com/IrumiDesu7/irumi-station'
           target='_blank'
           rel='noopener noreferrer'
+          aria-label='Visit irumi station repo'
+          role='link'
         >
           <Github
             className='hover:text-pallette-accent dark:hover:text-pallette-text'
