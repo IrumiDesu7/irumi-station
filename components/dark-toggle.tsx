@@ -11,6 +11,7 @@ const DarkToggle = () => {
     <Button
       onClick={() => (theme == 'dark' ? setTheme('light') : setTheme('dark'))}
       variant={'ghost'}
+      aria-label='Theme toggle'
     >
       <Sun />
     </Button>
