@@ -10,7 +10,7 @@ const IntroSection = () => {
       <div className='flex flex-col items-center gap-5'>
         <Avatar>
           <AvatarImage
-            src='https://avatars.githubusercontent.com/u/83828336?v=4'
+            src='/avatar.webp'
             alt='irumi'
             className='rounded-full'
             width={256}
