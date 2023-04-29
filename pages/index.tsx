@@ -28,7 +28,7 @@ const TechSection = () => {
   return (
     <section
       id='tech'
-      className='flex flex-col items-center justify-center gap-10 p-10'
+      className='flex flex-col  items-center justify-center gap-10 p-10'
     >
       <h1 className='font-medium sm:text-lg '>Tech is used in this project</h1>
       <div className='flex flex-wrap justify-center gap-10'>
