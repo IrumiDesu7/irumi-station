@@ -8,7 +8,7 @@ const TechSection = () => {
       id='tech'
       className='flex flex-col  items-center justify-center gap-10 p-10'
     >
-      <h1 className='font-medium sm:text-lg '>Tech is used in this project</h1>
+      <h1 className='font-medium sm:text-lg '>Tech used in this project</h1>
       <div className='flex flex-wrap justify-center gap-10'>
         <Image
           className='dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert'
