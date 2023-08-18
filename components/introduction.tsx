@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
-import { DarkModeToggle } from './dark-toggle'
 
 export default function Introduction() {
   const introductionRef = useRef(null)
@@ -18,7 +17,7 @@ export default function Introduction() {
 
       tl.from('.image', { x: -999 })
       tl.from('.title', { x: 999 })
-      tl.from('.text', { x: -999 })
+      tl.from('.text', { opacity: 0, duration: 1 })
     }, introductionRef)
 
     return () => ctx.revert()
@@ -38,7 +37,7 @@ export default function Introduction() {
           Hello,
           <br />I am <span className='line-through'>Ilmi</span> Irumi
         </h1>
-        <p className='font-medium'>a Frontend Developer</p>
+        <p className='text font-medium'>a Frontend Developer</p>
       </div>
     </section>
   )

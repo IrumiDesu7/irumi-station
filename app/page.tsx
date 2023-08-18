@@ -1,4 +1,5 @@
 import Introduction from '@/components/introduction'
+import TechStacks from '@/components/tech-stacks'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -12,8 +13,9 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className='min-h-screen p-24 overflow-x-hidden'>
+    <main className='flex flex-col gap-10 min-h-screen p-4 overflow-x-hidden'>
       <Introduction />
+      <TechStacks />
     </main>
   )
 }
