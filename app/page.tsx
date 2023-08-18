@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className='flex flex-col gap-10 min-h-screen p-4 overflow-x-hidden'>
+    <main className='flex flex-col gap-10 min-h-screen p-4 sm:p-24 overflow-x-hidden'>
       <Introduction />
       <TechStacks />
     </main>

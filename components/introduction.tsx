@@ -25,7 +25,7 @@ export default function Introduction() {
 
   return (
     <section id='introduction' ref={introductionRef} className='space-y-8'>
-      <div className='flex flex-col items-center gap-3'>
+      <div className='flex flex-col items-center gap-3 sm:gap-5'>
         <Image
           src='/assets/irumi.webp'
           alt='Irumi avatar'
