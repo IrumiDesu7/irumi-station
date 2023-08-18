@@ -74,3 +74,27 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* --- Scrollbar styling --- */
+/* width */
+::-webkit-scrollbar,
+::-webkit-scrollbar-horizontal {
+  width: 7px;
+  height: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #29303a;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #545961;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7f8389;
+}
+/* --- End of Scrollbar styling --- */

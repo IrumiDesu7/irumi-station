@@ -1,36 +1,31 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
+import { DarkModeToggle } from './dark-toggle'
 
 export default function Introduction() {
   const introductionRef = useRef(null)
+
   useEffect(() => {
     let ctx = gsap.context(() => {
-      let tl = gsap.timeline()
-      tl.from('.image', {
-        x: -999,
-        duration: 0.3,
-        ease: 'circ',
+      const tl = gsap.timeline({
+        defaults: {
+          duration: 0.5,
+        },
       })
-      tl.from('.title', {
-        x: -999,
-        duration: 0.3,
-        ease: 'circ',
-      })
-      tl.from('.text', {
-        x: -999,
-        duration: 0.3,
-        ease: 'circ',
-      })
+
+      tl.from('.image', { x: -999 })
+      tl.from('.title', { x: 999 })
+      tl.from('.text', { x: -999 })
     }, introductionRef)
 
     return () => ctx.revert()
   }, [])
 
   return (
-    <section id='introduction' ref={introductionRef}>
+    <section id='introduction' ref={introductionRef} className='space-y-8'>
       <div className='flex flex-col items-center gap-3'>
         <Image
           src='/assets/irumi.webp'
@@ -41,9 +36,9 @@ export default function Introduction() {
         />
         <h1 className='text-center title font-bold text-4xl'>
           Hello,
-          <br />I am Ilmi
+          <br />I am <span className='line-through'>Ilmi</span> Irumi
         </h1>
-        <p className='text'>a Frontend Developer</p>
+        <p className='font-medium'>a Frontend Developer</p>
       </div>
     </section>
   )
