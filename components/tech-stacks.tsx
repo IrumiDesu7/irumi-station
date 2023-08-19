@@ -14,12 +14,12 @@ const TECH_LIST = [
     filename: 'react.webp',
   },
   {
-    name: 'Vue',
-    filename: 'vue.webp',
-  },
-  {
     name: 'Next',
     filename: 'next.svg',
+  },
+  {
+    name: 'Vue',
+    filename: 'vue.webp',
   },
   {
     name: 'Nuxt',
@@ -39,7 +39,6 @@ export default function TechStacks() {
   return (
     <section id='tech-stacks'>
       <h2 className='text-center font-medium text-xl'>Current Skills</h2>
-      {/* Wrap your tech icons in the Marquee component */}
       <div className='mt-4 sm:hidden'>
         <Marquee autoFill>
           {TECH_LIST.map((item) => (
@@ -47,8 +46,8 @@ export default function TechStacks() {
               <Image
                 src={`/assets/${item.filename}`}
                 alt={item.name}
-                width={64}
-                height={64}
+                width={50}
+                height={50}
                 className={`mx-3 ${item.name === 'Next' ? 'dark:invert' : ''}`}
               />
             </div>

@@ -35,7 +35,7 @@ export default function Introduction() {
         />
         <h1 className='text-center title font-bold text-4xl'>
           Hello,
-          <br />I am <span className='line-through'>Ilmi</span> Irumi
+          <br />I am Ilmi
         </h1>
         <p className='text font-medium'>a Frontend Developer</p>
       </div>
