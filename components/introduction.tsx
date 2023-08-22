@@ -50,7 +50,7 @@ export default function Introduction() {
           alt='Irumi avatar'
           width='128'
           height='128'
-          className='rounded-full image shadow'
+          className='rounded-full image'
         />
         <h1 className='text-center title font-bold text-4xl'>
           Hello,
