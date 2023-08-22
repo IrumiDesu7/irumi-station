@@ -8,6 +8,25 @@ export default function Introduction() {
   const introductionRef = useRef(null)
 
   useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      const image = document.querySelector('.image')
+      const xPos = (event.clientX / window.innerWidth) * 2 - 1
+      const yPos = -((event.clientY / window.innerHeight) * 2 - 1)
+
+      gsap.to(image, 1, {
+        rotationY: xPos * 27,
+        rotationX: yPos * 27,
+      })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [])
+
+  useEffect(() => {
     let ctx = gsap.context(() => {
       const tl = gsap.timeline({
         defaults: {
@@ -31,7 +50,7 @@ export default function Introduction() {
           alt='Irumi avatar'
           width='128'
           height='128'
-          className='rounded-full image'
+          className='rounded-full image shadow'
         />
         <h1 className='text-center title font-bold text-4xl'>
           Hello,

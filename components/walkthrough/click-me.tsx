@@ -14,9 +14,7 @@ export default function ClickMe() {
       <Button variant='secondary' className='animate-pulse' onClick={onClick}>
         Click me
       </Button>
-      <div className='h-[100vh]' ref={topRef}>
-        I am here
-      </div>
+      <div ref={topRef}></div>
     </>
   )
 }
