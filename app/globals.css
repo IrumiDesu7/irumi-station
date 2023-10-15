@@ -98,10 +98,3 @@
   background: #7f8389;
 }
 /* --- End of Scrollbar styling --- */
-
-/* --- Cursor styling --- */
-button,
-a {
-  cursor: none;
-}
-/* --- End of cursor styling --- */

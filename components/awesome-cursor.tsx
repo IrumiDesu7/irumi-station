@@ -29,13 +29,6 @@ export const AwesomeCursor = () => {
   useEffect(() => {
     const links = document.querySelectorAll('a')
     const buttons = document.querySelectorAll('button')
-    let ctx = gsap.context(() => {
-      gsap.from(cursorRef.current, {
-        opacity: 0,
-        duration: 3,
-        perspective: 20,
-      })
-    })
     window.addEventListener('mousemove', onMouseMove)
     buttons.forEach((button) => {
       button.addEventListener('mouseenter', onMouseMoveEnterSpecial)
@@ -56,7 +49,6 @@ export const AwesomeCursor = () => {
         link.removeEventListener('mouseenter', onMouseMoveEnterSpecial)
         link.removeEventListener('mouseleave', onMouseMoveLeaveSpecial)
       })
-      ctx.revert()
     }
   }, [])
 
