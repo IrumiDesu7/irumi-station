@@ -64,7 +64,7 @@ export const AwesomeCursor = () => {
     <div
       ref={cursorRef}
       id='awesome-cursor'
-      className='hidden sm:block h-5 w-5 fixed bg-white mix-blend-difference pointer-events-none rounded-full z-[9999]'
+      className='pointer-events-none fixed z-[9999] hidden h-5 w-5 rounded-full bg-white mix-blend-difference sm:block'
     />
   )
 }

@@ -38,11 +38,11 @@ const TECH_LIST = [
 export default function TechStacks() {
   return (
     <section id='tech-stacks'>
-      <h2 className='text-center font-medium text-xl'>Current Skills</h2>
+      <h2 className='text-center text-xl font-medium'>Current Skills</h2>
       <div className='mt-4 sm:hidden'>
         <Marquee autoFill>
           {TECH_LIST.map((item) => (
-            <div key={item.filename} className='h-full flex items-center'>
+            <div key={item.filename} className='flex h-full items-center'>
               <Image
                 src={`/assets/${item.filename}`}
                 alt={item.name}
@@ -54,7 +54,7 @@ export default function TechStacks() {
           ))}
         </Marquee>
       </div>
-      <div className='mt-4 hidden sm:flex justify-center gap-10'>
+      <div className='mt-4 hidden justify-center gap-10 sm:flex'>
         {TECH_LIST.map((item) => (
           <TooltipProvider key={item.filename}>
             <Tooltip>

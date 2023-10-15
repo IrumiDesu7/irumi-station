@@ -6,7 +6,7 @@ export default function Walkthrough() {
       <div className='flex flex-col items-center gap-5'>
         <ClickMe />
         <div className=''>
-          <h2 className='text-3xl font-bold text-center'>I am a walkthrough</h2>
+          <h2 className='text-center text-3xl font-bold'>I am a walkthrough</h2>
         </div>
       </div>
     </section>
