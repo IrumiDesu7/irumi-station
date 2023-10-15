@@ -16,8 +16,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
           <AwesomeCursor />
-          <Navbar />
-          {children}
+          <div className='flex min-h-screen flex-col'>
+            <Navbar />
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

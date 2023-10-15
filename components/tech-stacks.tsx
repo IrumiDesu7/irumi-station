@@ -1,39 +1,12 @@
-import React from 'react'
-import Image from 'next/image'
-import Marquee from 'react-fast-marquee'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-
-const TECH_LIST = [
-  {
-    name: 'React',
-    filename: 'react.webp',
-  },
-  {
-    name: 'Next',
-    filename: 'next.svg',
-  },
-  {
-    name: 'Vue',
-    filename: 'vue.webp',
-  },
-  {
-    name: 'Nuxt',
-    filename: 'nuxt.svg',
-  },
-  {
-    name: 'TypeScript',
-    filename: 'ts.webp',
-  },
-  {
-    name: 'TailwindCSS',
-    filename: 'tailwind.svg',
-  },
-]
+import { TECH_LIST } from '@/contents'
+import Image from 'next/image'
+import Marquee from 'react-fast-marquee'
 
 export default function TechStacks() {
   return (

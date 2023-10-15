@@ -1,19 +1,19 @@
 'use client'
 
-import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
+import Image from 'next/image'
+import { useEffect, useRef } from 'react'
 
 export default function Introduction() {
   const introductionRef = useRef(null)
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
-      const image = document.querySelector('.image')
       const xPos = (event.clientX / window.innerWidth) * 2 - 1
       const yPos = -((event.clientY / window.innerHeight) * 2 - 1)
 
-      gsap.to(image, 1, {
+      gsap.to('.image', {
+        duration: 1,
         rotationY: xPos * 27,
         rotationX: yPos * 27,
       })
@@ -33,7 +33,7 @@ export default function Introduction() {
           duration: 0.5,
         },
       })
-
+      tl.to('.wrapper', { opacity: 1 })
       tl.from('.image', { x: -999 })
       tl.from('.title', { x: 999 })
       tl.from('.text', { opacity: 0, duration: 1 })
@@ -44,7 +44,7 @@ export default function Introduction() {
 
   return (
     <section id='introduction' ref={introductionRef} className='space-y-8'>
-      <div className='flex flex-col items-center gap-3 sm:gap-5'>
+      <div className='wrapper flex flex-col items-center gap-3 opacity-0 sm:gap-5'>
         <Image
           src='/assets/irumi.webp'
           alt='Irumi avatar'
