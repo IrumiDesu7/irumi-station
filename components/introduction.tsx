@@ -3,28 +3,10 @@
 import { gsap } from 'gsap'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
+import { Tilt } from '@jdion/tilt-react'
 
 export default function Introduction() {
   const introductionRef = useRef(null)
-
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      const xPos = (event.clientX / window.innerWidth) * 2 - 1
-      const yPos = -((event.clientY / window.innerHeight) * 2 - 1)
-
-      gsap.to('.image', {
-        duration: 1,
-        rotationY: xPos * 27,
-        rotationX: yPos * 27,
-      })
-    }
-
-    window.addEventListener('mousemove', handleMouseMove)
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove)
-    }
-  }, [])
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -45,13 +27,15 @@ export default function Introduction() {
   return (
     <section id='introduction' ref={introductionRef} className='space-y-8'>
       <div className='wrapper flex flex-col items-center gap-3 opacity-0 sm:gap-5'>
-        <Image
-          src='/assets/irumi.webp'
-          alt='Irumi avatar'
-          width='128'
-          height='128'
-          className='image rounded-full'
-        />
+        <Tilt style={{ height: 128, width: 128 }}>
+          <Image
+            src='/assets/irumi.webp'
+            alt='Irumi avatar'
+            width='128'
+            height='128'
+            className='image rounded-full'
+          />
+        </Tilt>
         <h1 className='title text-center text-4xl font-bold'>
           Hello,
           <br />I am Ilmi
