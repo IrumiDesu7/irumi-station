@@ -33,7 +33,7 @@ export default function Introduction() {
             alt='Irumi avatar'
             width={128}
             height={128}
-            className='image rounded-full'
+            className='image rounded-3xl'
           />
         </Tilt>
         <h1 className='title text-center text-4xl font-bold'>
