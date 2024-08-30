@@ -10,10 +10,12 @@ import Marquee from 'react-fast-marquee'
 
 export default function TechStacks() {
   return (
-    <section id='tech-stacks'>
-      <h2 className='text-center text-xl font-medium'>Current Skills</h2>
+    <section id='tech-stacks' className='space-y-10'>
+      <h2 className='text-center text-lg font-medium md:text-xl'>
+        Current Skills
+      </h2>
       <div className='mt-4 sm:hidden'>
-        <Marquee autoFill>
+        <Marquee autoFill speed={50} pauseOnHover gradient={false}>
           {TECH_LIST.map((item) => (
             <div key={item.filename} className='flex h-full items-center'>
               <Image
