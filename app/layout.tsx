@@ -15,7 +15,6 @@ export default function RootLayout({
     <html lang='en'>
       <body className={inter.className}>
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
-          <AwesomeCursor />
           <div className='flex min-h-screen flex-col'>
             <Navbar />
             {children}

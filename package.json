@@ -10,6 +10,7 @@
     "format": "npx prettier --write ."
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
     "@jdion/tilt-react": "^1.0.0",
     "@radix-ui/react-dropdown-menu": "^2.1.2",
     "@radix-ui/react-slot": "^1.1.0",
