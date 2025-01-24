@@ -1,8 +1,7 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-import { ThemeProvider } from '@/components/theme-provider'
 import Navbar from '@/components/navbar'
-import { AwesomeCursor } from '@/components/awesome-cursor'
+import { ThemeProvider } from '@/components/theme-provider'
+import { Inter } from 'next/font/google'
+import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,7 +11,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en'>
+    <html suppressHydrationWarning lang='en'>
       <body className={inter.className}>
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
           <div className='flex min-h-screen flex-col'>
