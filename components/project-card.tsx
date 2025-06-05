@@ -31,7 +31,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
   }
 
   return (
-    <Card className={`h-full ${featured ? 'ring-2 ring-primary' : ''}`}>
+    <Card className={`h-full ${featured ? 'ring-1 ring-primary/20 shadow-md' : ''}`}>
       <CardHeader>
         <div className="flex items-start justify-between">
           <div className="space-y-2">
@@ -39,14 +39,14 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
               {project.title}
             </CardTitle>
             <div className="flex gap-2">
-              <Badge className={statusColors[project.status]} variant="secondary">
+              <Badge className={`${statusColors[project.status]} rounded-full`} variant="secondary">
                 {project.status}
               </Badge>
-              <Badge className={typeColors[project.type]} variant="secondary">
+              <Badge className={`${typeColors[project.type]} rounded-full`} variant="secondary">
                 {project.type}
               </Badge>
               {featured && (
-                <Badge variant="default">Featured</Badge>
+                <Badge variant="default" className="rounded-full">Featured</Badge>
               )}
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
             <h4 className="text-sm font-medium mb-2">Tech Stack</h4>
             <div className="flex flex-wrap gap-1">
               {project.techStack.map((tech) => (
-                <Badge key={tech} variant="outline" className="text-xs">
+                <Badge key={tech} variant="outline" className="text-xs rounded-full">
                   {tech}
                 </Badge>
               ))}
@@ -94,7 +94,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
 
       <CardFooter className="flex gap-2">
         {project.url && (
-          <Button asChild size="sm" className="flex-1">
+          <Button asChild size="sm" className="flex-1 rounded-full">
             <Link href={project.url} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="w-4 h-4 mr-1" />
               Live Site
@@ -102,7 +102,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
           </Button>
         )}
         {project.githubUrl && (
-          <Button asChild variant="outline" size="sm" className="flex-1">
+          <Button asChild variant="outline" size="sm" className="flex-1 rounded-full">
             <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
               <Github className="w-4 h-4 mr-1" />
               Code

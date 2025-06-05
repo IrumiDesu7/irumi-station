@@ -58,6 +58,7 @@ export default function ProjectShowcase() {
                     key={type}
                     variant={selectedType === type ? 'default' : 'outline'}
                     size="sm"
+                    className="rounded-full"
                     onClick={() => setSelectedType(type)}
                   >
                     {type}
@@ -74,6 +75,7 @@ export default function ProjectShowcase() {
                     key={status}
                     variant={selectedStatus === status ? 'default' : 'outline'}
                     size="sm"
+                    className="rounded-full"
                     onClick={() => setSelectedStatus(status)}
                   >
                     {status}
@@ -85,7 +87,7 @@ export default function ProjectShowcase() {
 
           {/* Results Count */}
           <div className="text-center">
-            <Badge variant="secondary">
+            <Badge variant="secondary" className="rounded-full">
               {filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''} found
             </Badge>
           </div>
@@ -109,7 +111,7 @@ export default function ProjectShowcase() {
                 setSelectedType('All')
                 setSelectedStatus('All')
               }}
-              className="mt-4"
+              className="mt-4 rounded-full"
             >
               Clear Filters
             </Button>
