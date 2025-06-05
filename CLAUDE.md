@@ -37,6 +37,7 @@ This is a Next.js 15 portfolio website built with TypeScript, React 19, and Tail
 **Component patterns:**
 - Uses React.ComponentProps for component prop typing
 - Follows shadcn/ui component API patterns
+- **ALWAYS use shadcn/ui components when possible** - if a needed component doesn't exist, install it using `pnpm dlx shadcn@latest add <component-name>`
 - Custom components like `AwesomeCursor`, theme toggle, and tech stack showcase
 - Path aliasing with `@/*` pointing to project root
 
