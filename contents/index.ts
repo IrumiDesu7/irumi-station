@@ -65,10 +65,6 @@ export const PROJECTS: Project[] = [
       'SEO optimization and performance enhancements',
       'Responsive design from scratch'
     ],
-    metrics: [
-      { label: 'Performance Score', value: '95+' },
-      { label: 'SEO Score', value: '100' }
-    ],
     period: '2024'
   },
   {
@@ -122,10 +118,6 @@ export const PROJECTS: Project[] = [
       'Dynamic table of contents for blog pages',
       'Cross-browser compatibility',
       'Pixel-perfect design implementation'
-    ],
-    metrics: [
-      { label: 'Animation Performance', value: '60fps' },
-      { label: 'Lighthouse Score', value: '95+' }
     ],
     period: '2023'
   },

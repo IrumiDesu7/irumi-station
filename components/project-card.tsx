@@ -89,24 +89,6 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
               ))}
             </ul>
           </div>
-
-          {project.metrics && (
-            <div>
-              <h4 className="text-sm font-medium mb-2">Metrics</h4>
-              <div className="grid grid-cols-2 gap-2">
-                {project.metrics.map((metric, index) => (
-                  <div key={index} className="text-center p-2 bg-muted rounded">
-                    <div className="text-lg font-bold text-primary">
-                      {metric.value}
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      {metric.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </CardContent>
 
