@@ -22,7 +22,7 @@ This is a Next.js 15 portfolio website built with TypeScript, React 19, and Tail
 - **Styling:** Tailwind CSS v4 with CSS variables for theming
 - **Theme management:** `next-themes` for dark/light mode switching with system preference support
 - **Typography:** Inter font from Google Fonts
-- **Animations:** GSAP for complex animations, CSS animations for simpler interactions
+- **Animations:** Always use motion and remember to import it with `from "motion/react". And use CSS animations for simpler interactions`
 
 **Directory structure:**
 - `app/` - Next.js App Router pages and layouts
