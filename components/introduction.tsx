@@ -1,47 +1,53 @@
 'use client'
 
-import { useGSAP } from '@gsap/react'
 import { Tilt } from '@jdion/tilt-react'
-import { gsap } from 'gsap'
+import { motion } from 'motion/react'
 import Image from 'next/image'
-import { useRef } from 'react'
 
 export default function Introduction() {
-  const introductionRef = useRef(null)
-
-  useGSAP(
-    () => {
-      gsap
-        .timeline({
-          defaults: { duration: 0.5, ease: 'power2.out' },
-        })
-        .to('.wrapper', { opacity: 1 })
-        .from('.image', { x: '-100%' }, '<')
-        .from('.title', { x: '100%' }, '<')
-        .from('.text', { opacity: 0, duration: 1 }, '-=0.3')
-    },
-    { scope: introductionRef },
-  )
 
   return (
-    <section id='introduction' ref={introductionRef} className='space-y-8'>
-      <div className='wrapper flex flex-col items-center gap-3 opacity-0 sm:gap-5'>
-        <Tilt style={{ height: 128, width: 128 }}>
-          <Image
-            priority
-            src='/assets/irumi.webp'
-            alt='Irumi avatar'
-            width={128}
-            height={128}
-            className='image rounded-3xl'
-          />
-        </Tilt>
-        <h1 className='title text-center text-4xl font-bold'>
+    <section id='introduction' className='space-y-8'>
+      <motion.div 
+        className='flex flex-col items-center gap-3 sm:gap-5'
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+      >
+        <motion.div
+          initial={{ x: '-100%' }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+        >
+          <Tilt style={{ height: 128, width: 128 }}>
+            <Image
+              priority
+              src='/assets/irumi.webp'
+              alt='Irumi avatar'
+              width={128}
+              height={128}
+              className='rounded-3xl'
+            />
+          </Tilt>
+        </motion.div>
+        <motion.h1 
+          className='text-center text-4xl font-bold'
+          initial={{ x: '100%' }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+        >
           Hello,
           <br />I am Ilmi
-        </h1>
-        <p className='text font-medium'>a Frontend Developer</p>
-      </div>
+        </motion.h1>
+        <motion.p 
+          className='font-medium'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
+          a Frontend Developer
+        </motion.p>
+      </motion.div>
     </section>
   )
 }
