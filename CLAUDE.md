@@ -45,3 +45,7 @@ This is a Next.js 15 portfolio website built with TypeScript, React 19, and Tail
 - Theme state managed by `next-themes`
 - Component-level state with React hooks
 - No global state management library currently in use
+
+## Commit Guidelines
+- Use simple commit messages with prefix like fix, chore, update, etc.
+- When saying "commit", group relevant changes first then commit it.
