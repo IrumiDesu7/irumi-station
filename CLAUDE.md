@@ -49,3 +49,9 @@ This is a Next.js 15 portfolio website built with TypeScript, React 19, and Tail
 ## Commit Guidelines
 - Use simple commit messages with prefix like fix, chore, update, etc.
 - When saying "commit", group relevant changes first then commit it.
+
+# important-instruction-reminders
+Do what has been asked; nothing more, nothing less.
+NEVER create files unless they're absolutely necessary for achieving your goal.
+ALWAYS prefer editing an existing file to creating a new one.
+NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.
