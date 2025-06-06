@@ -3,12 +3,13 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { PROJECTS, type ProjectType, type ProjectStatus } from '@/contents'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ProjectCard from './project-card'
 
 export default function ProjectShowcase() {
   const [selectedType, setSelectedType] = useState<ProjectType | 'All'>('All')
   const [selectedStatus, setSelectedStatus] = useState<ProjectStatus | 'All'>('All')
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
   const featuredProjects = PROJECTS.filter(project => project.featured)
   
@@ -17,6 +18,12 @@ export default function ProjectShowcase() {
     const statusMatch = selectedStatus === 'All' || project.status === selectedStatus
     return typeMatch && statusMatch
   })
+
+  useEffect(() => {
+    setIsTransitioning(true)
+    const timer = setTimeout(() => setIsTransitioning(false), 300)
+    return () => clearTimeout(timer)
+  }, [selectedType, selectedStatus])
 
   const projectTypes: (ProjectType | 'All')[] = ['All', 'Professional', 'Freelance', 'Personal']
   const projectStatuses: (ProjectStatus | 'All')[] = ['All', 'Live', 'In Development', 'Completed']
@@ -58,6 +65,7 @@ export default function ProjectShowcase() {
                     key={type}
                     variant={selectedType === type ? 'default' : 'outline'}
                     size="sm"
+                    className="rounded-full transition-all duration-200 ease-out hover:scale-105 active:scale-95"
                     onClick={() => setSelectedType(type)}
                   >
                     {type}
@@ -74,6 +82,7 @@ export default function ProjectShowcase() {
                     key={status}
                     variant={selectedStatus === status ? 'default' : 'outline'}
                     size="sm"
+                    className="rounded-full transition-all duration-200 ease-out hover:scale-105 active:scale-95"
                     onClick={() => setSelectedStatus(status)}
                   >
                     {status}
@@ -85,21 +94,47 @@ export default function ProjectShowcase() {
 
           {/* Results Count */}
           <div className="text-center">
-            <Badge variant="secondary">
+            <Badge 
+              variant="secondary" 
+              className={`rounded-full transition-all duration-300 ease-out ${
+                isTransitioning ? 'opacity-50 scale-95' : 'opacity-100 scale-100'
+              }`}
+            >
               {filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''} found
             </Badge>
           </div>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+        <div 
+          className={`grid gap-6 md:grid-cols-2 lg:grid-cols-3 transition-all duration-300 ease-out ${
+            isTransitioning 
+              ? 'opacity-0 scale-95 transform translate-y-2' 
+              : 'opacity-100 scale-100 transform translate-y-0'
+          }`}
+        >
+          {filteredProjects.map((project, index) => (
+            <div
+              key={project.id}
+              className="transition-all duration-300 ease-out hover:scale-105"
+              style={{
+                animationDelay: `${index * 50}ms`,
+                animation: isTransitioning ? 'none' : 'fadeInUp 300ms ease-out forwards'
+              }}
+            >
+              <ProjectCard project={project} />
+            </div>
           ))}
         </div>
 
         {filteredProjects.length === 0 && (
-          <div className="text-center py-12">
+          <div 
+            className={`text-center py-12 transition-all duration-300 ease-out ${
+              isTransitioning 
+                ? 'opacity-0 scale-95 transform translate-y-2' 
+                : 'opacity-100 scale-100 transform translate-y-0'
+            }`}
+          >
             <p className="text-muted-foreground">
               No projects found with the current filters.
             </p>
@@ -109,7 +144,7 @@ export default function ProjectShowcase() {
                 setSelectedType('All')
                 setSelectedStatus('All')
               }}
-              className="mt-4"
+              className="mt-4 rounded-full transition-all duration-200 ease-out hover:scale-105 active:scale-95"
             >
               Clear Filters
             </Button>

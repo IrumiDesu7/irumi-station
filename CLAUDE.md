@@ -22,7 +22,7 @@ This is a Next.js 15 portfolio website built with TypeScript, React 19, and Tail
 - **Styling:** Tailwind CSS v4 with CSS variables for theming
 - **Theme management:** `next-themes` for dark/light mode switching with system preference support
 - **Typography:** Inter font from Google Fonts
-- **Animations:** GSAP for complex animations, CSS animations for simpler interactions
+- **Animations:** Always use motion and remember to import it with `from "motion/react". And use CSS animations for simpler interactions`
 
 **Directory structure:**
 - `app/` - Next.js App Router pages and layouts
@@ -45,3 +45,13 @@ This is a Next.js 15 portfolio website built with TypeScript, React 19, and Tail
 - Theme state managed by `next-themes`
 - Component-level state with React hooks
 - No global state management library currently in use
+
+## Commit Guidelines
+- Use simple commit messages with prefix like fix, chore, update, etc.
+- When saying "commit", group relevant changes first then commit it.
+
+# important-instruction-reminders
+Do what has been asked; nothing more, nothing less.
+NEVER create files unless they're absolutely necessary for achieving your goal.
+ALWAYS prefer editing an existing file to creating a new one.
+NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.

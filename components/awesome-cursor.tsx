@@ -1,29 +1,35 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
+import { animate } from 'motion/react'
 
 export const AwesomeCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null)
 
   const onMouseMove = (event: MouseEvent) => {
     const { clientX, clientY } = event
-    gsap.to(cursorRef.current, {
-      x: clientX,
-      y: clientY,
-    })
+    if (cursorRef.current) {
+      animate(cursorRef.current, {
+        x: clientX,
+        y: clientY,
+      })
+    }
   }
 
   const onMouseMoveEnterSpecial = () => {
-    gsap.to(cursorRef.current, {
-      scale: 1.5,
-    })
+    if (cursorRef.current) {
+      animate(cursorRef.current, {
+        scale: 1.5,
+      })
+    }
   }
 
   const onMouseMoveLeaveSpecial = () => {
-    gsap.to(cursorRef.current, {
-      scale: 1,
-    })
+    if (cursorRef.current) {
+      animate(cursorRef.current, {
+        scale: 1,
+      })
+    }
   }
 
   useEffect(() => {

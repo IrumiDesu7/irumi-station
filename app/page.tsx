@@ -1,6 +1,7 @@
 import Introduction from '@/components/introduction'
 import ProjectShowcase from '@/components/project-showcase'
 import TechStacks from '@/components/tech-stacks'
+import ContactSection from '@/components/contact-section'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -14,10 +15,11 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className='flex h-full flex-1 flex-col justify-evenly gap-16 overflow-x-hidden p-4 sm:p-24'>
+    <main id="main-content" className='flex h-full flex-1 flex-col justify-evenly gap-16 overflow-x-hidden p-4 sm:p-24'>
       <Introduction />
       <TechStacks />
       <ProjectShowcase />
+      <ContactSection />
     </main>
   )
 }
