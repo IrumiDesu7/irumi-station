@@ -6,12 +6,12 @@ export default function ContactSection() {
     <section id='contact' className='py-16 text-center'>
       <h2 className='mb-8 text-3xl font-bold'>Let&apos;s Work Together</h2>
       <p className='text-muted-foreground mx-auto mb-8 max-w-2xl'>
-        I&apos;m currently available for freelance work and full-time positions.
-        If you have a project in mind, let&apos;s talk!
+        I&apos;m currently available for freelance work. If you have a project
+        in mind, let&apos;s talk!
       </p>
       <div className='flex flex-wrap justify-center gap-4'>
         <Button size='lg' asChild className='rounded-full'>
-          <a href='mailto:contact@example.com'>
+          <a href='mailto:ikalam89@gmail.com'>
             <Mail className='mr-2 h-4 w-4' />
             Get in Touch
           </a>
